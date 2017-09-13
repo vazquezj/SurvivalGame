@@ -1,4 +1,4 @@
 sceneSetups:
-- path: PostG300.unity
+- path: SurvivalGame.unity
   isLoaded: 1
   isActive: 1
