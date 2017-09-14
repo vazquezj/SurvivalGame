@@ -14,18 +14,18 @@ namespace CompleteProject
 		//private Inventory inventory;
 		//public List<Item> inventory = new List<Item> ();
 
-		/*public float startingHunger;
+		public float startingHunger;
 		public float currentHunger;
 		PlayerHunger playerHunger;
 		public float startingThirst;
 		public float currentThirst;
-		PlayerThirst playerThirst;*/
+		PlayerThirst playerThirst;
 
-		/*void Awake ()
+		void Awake ()
 		{
 			playerHunger = GetComponent <PlayerHunger> ();
 			playerThirst = GetComponent<PlayerThirst> ();
-		}*/
+		}
 
 		void Start ()
 		{
@@ -68,20 +68,20 @@ namespace CompleteProject
 			}
 		}
 
-		/*void OnTriggerEnter (Collider other)
+		void OnTriggerEnter (Collider other)
 		{
 			if (other.tag == "Food")
 			{
-				inventory [0] = database.items [0];
-				//playerHunger.currentHunger += 30;
+				//inventory [0] = database.items [0];
+				playerHunger.currentHunger += 30;
 				Destroy (other.gameObject);
 			}
 			if (other.tag == "Water")
 			{
-				inventory [1] = database.items [1];
-				//playerThirst.currentThirst += 25;
+				//inventory [1] = database.items [1];
+				playerThirst.currentThirst += 25;
 				Destroy (other.gameObject);
 			}
-		}*/
+		}
 	}
 }
