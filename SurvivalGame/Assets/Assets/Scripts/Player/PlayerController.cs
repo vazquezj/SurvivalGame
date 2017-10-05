@@ -10,9 +10,8 @@ namespace CompleteProject
 		public float rotationSpeed;
 		public float jumpSpeed;
 		bool onGround = true;
-		//private ItemDatabase database;
-		//private Inventory inventory;
-		//public List<Item> inventory = new List<Item> ();
+		public Inventory inventory;
+		public ItemDatabase database;
 
 		public float startingHunger;
 		public float currentHunger;
@@ -27,10 +26,10 @@ namespace CompleteProject
 			playerThirst = GetComponent<PlayerThirst> ();
 		}
 
-		void Start ()
+		/*void Start ()
 		{
 			Cursor.lockState = CursorLockMode.Locked;
-		}
+		}*/
 
 		void Update ()
 		{
@@ -62,24 +61,26 @@ namespace CompleteProject
 				this.GetComponent<Rigidbody> ().AddForce (Vector3.up * jumpSpeed);
 			}
 
-			if (Input.GetKeyDown ("escape"))
+			/*if (Input.GetKeyDown ("escape"))
 			{
 				Cursor.lockState = CursorLockMode.None;
-			}
+			}*/
 		}
 
 		void OnTriggerEnter (Collider other)
 		{
 			if (other.tag == "Food")
 			{
+				inventory.AddFood ();
 				//inventory [0] = database.items [0];
-				playerHunger.currentHunger += 30;
+				//playerHunger.currentHunger += 30;
 				Destroy (other.gameObject);
 			}
 			if (other.tag == "Water")
 			{
+				inventory.AddWater ();
 				//inventory [1] = database.items [1];
-				playerThirst.currentThirst += 25;
+				//playerThirst.currentThirst += 25;
 				Destroy (other.gameObject);
 			}
 		}

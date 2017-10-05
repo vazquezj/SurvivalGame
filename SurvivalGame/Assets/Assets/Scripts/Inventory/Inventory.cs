@@ -27,8 +27,8 @@ public class Inventory : MonoBehaviour {
 		}
 
 		database = GameObject.FindGameObjectWithTag ("ItemDatabase").GetComponent<ItemDatabase> ();
-		AddItem (0);
-		AddItem (1);
+		//AddItem (0);
+		//AddItem (1);
 		//print (InventoryContains(0));
 	}
 
@@ -189,7 +189,7 @@ public class Inventory : MonoBehaviour {
 		}
 	}
 
-	void AddItem (int id)
+	public void AddItem (int id)
 	{
 		for (int i = 0; i < inventory.Count; i++)
 		{
@@ -235,5 +235,15 @@ public class Inventory : MonoBehaviour {
 		{
 			inventory[i] = PlayerPrefs.GetInt("Inventory " + i, -1) >= 0 ? database.GetItem (PlayerPrefs.GetInt("Inventory " + i)): new Item();
 		}
+	}
+
+	public void AddFood ()
+	{
+		AddItem (0);
+	}
+
+	public void AddWater()
+	{
+		AddItem (1);
 	}
 }
